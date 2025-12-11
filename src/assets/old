@@ -1,0 +1,174 @@
+// import { useState } from 'react'
+import './App.css'
+import coinbase from './assets/svg/coinbase.svg'
+import unity from './assets/svg/unity.svg'
+import burda from './assets/svg/burda.svg'
+import atlas from './assets/svg/atlas.svg'
+import forsta from './assets/svg/forsta.svg'
+import bighealth from './assets/svg/bighealth.svg'
+import leybold from './assets/svg/leybold.svg'
+import ltse from './assets/svg/ltse.svg'
+import clsx from 'clsx'
+import { FaArrowRight } from 'react-icons/fa6'
+import Slider from "react-slick";
+
+function App() {
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+    };
+    return (
+        <main>
+            <section>
+                <div className='h-[4.2rem] bg-[#020202b3] px-[2.5rem] flex justify-between items-center'>
+                    <div className='bg-red-400 h-6 w-10' />
+                    <div className='flex text-white text-sm leading-[20px] gap-[2rem]'>
+                        <p>SERVICES</p>
+                        <p>AI-HUB</p>
+                        <p>CLIENT STORIES</p>
+                        <p>CAREERS</p>
+                        <p>ABOUT US</p>
+                        <p>BLOG</p>
+                        <p>CONTACT</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div className='min-h-[100vh] bg-red-300 flex items-center justify-center'>
+                    <h2 className='text-white text-center font-[300] text-[6rem] leading-[1.1]'>
+                        {/* video: https://cdn.jsdelivr.net/gh/MarkoGole/Itekako-Cover-Video-New/Itekako_Office_2.mp4 */}
+                        <span className='text-[rgb(243,255,101)]'>House of Engineers.</span><br/>
+                        Big enough to deliver,<br/>
+                        small enought to care.
+                    </h2>
+                </div>
+            </section>
+            <section className='bg-[#020202] px-10 border-b-[0.3px] border-[#6f7372]'>
+                <div className='pt-[80px] pb-[55px] px-[80px] grid grid-cols-4'>
+                    {
+                        [
+                            { icon: coinbase},
+                            { icon: unity}, 
+                            { icon: burda}, 
+                            { icon: atlas},
+                            { icon: forsta}, 
+                            { icon: bighealth}, 
+                            { icon: leybold}, 
+                            { icon: ltse, special: true},
+                        ].map((item, idx) => (
+                            <div key={idx} className='h-[120px] flex items-center justify-center'>
+                                <img 
+                                    src={item.icon} 
+                                    alt="company logo" 
+                                    className={clsx(
+                                        // 'w-[112px]',
+                                        !item.special ? 'w-[112px]':'w-[40px]',
+                                    )}
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+            <section className='bg-[#020202] px-10'>
+                <div className='pt-[115px]'>
+                    <h2 className='mt-10 text-[60px] leading-[66px] text-white font-[200] w-[900px]'>We architect, build and test IT solutions for Fortune 500, SMEs and startups of all sizes. </h2>
+                    <div className='flex items-center gap-6 py-[2.88rem]'>
+                        <p className='whitespace-nowrap text-white text-[1.3rem] font-[300]'>Check out all client stories</p>
+                        <button className='py-[0.8rem] px-[1.4rem] flex items-center bg-[rgb(243,255,101)] rounded-full'>
+                            <span className='uppercase text-xs font-[200]'>More</span>
+                            <FaArrowRight className='w-3 ml-2' />
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <div className='bg-[#020202] '>
+                <Slider {...settings}>
+                    {
+                        [
+                            {
+                                image: 'https://cdn.prod.website-files.com/64fc70dc7492160ad5cb067b/655f17af86fbbf271ff8a74b_Unity.jpg',
+                                text: 'Internal software tools for support of internal development process'
+                            },
+                            {
+                                image: 'https://cdn.prod.website-files.com/64fc70dc7492160ad5cb067b/655f17af86fbbf271ff8a74b_Unity.jpg',
+                                text: 'Internal software tools for support of internal development process'
+                            },
+                            {
+                                image: 'https://cdn.prod.website-files.com/64fc70dc7492160ad5cb067b/655f17af86fbbf271ff8a74b_Unity.jpg',
+                                text: 'Internal software tools for support of internal development process'
+                            },
+                            {
+                                image: 'https://cdn.prod.website-files.com/64fc70dc7492160ad5cb067b/655f17af86fbbf271ff8a74b_Unity.jpg',
+                                text: 'Internal software tools for support of internal development process'
+                            },
+                            {
+                                image: 'https://cdn.prod.website-files.com/64fc70dc7492160ad5cb067b/655f17af86fbbf271ff8a74b_Unity.jpg',
+                                text: 'Internal software tools for support of internal development process'
+                            },
+                        ].map((item, idx) => (
+                            <div
+                                key={idx}
+                                className='p-[2.5rem] bg-black w-[25vw] border-y border-r border-[#6f7372]'
+                            >
+                                <img 
+                                    src={item.image}
+                                    alt="project image" 
+                                    className='w-full h-auto'
+                                />
+                                <h3 className='text-[#c4d6d4] text-[1.3rem] leading-[1.2] font-[200] mt-[1.5rem] mb-[2rem]'>{item.text}</h3>
+                                <FaArrowRight className='w-4 text-[#c4d6d4]' />
+                            </div>
+                        ))
+                    }
+                </Slider>
+                <div className='py-[8rem]'>
+                    <h2 className=''>Itekako in numbers</h2>
+                    <Slider {...settings}>
+                        {
+                            [
+                                {
+                                    image: 'https://cdn.prod.website-files.com/64f1d2353c80a2c0780949bc/650002473f676cb651d756f7_Itekako_150_Employees.gif',
+                                    text: '150+ employees'
+                                },
+                                {
+                                    image: 'https://cdn.prod.website-files.com/64f1d2353c80a2c0780949bc/650002473f676cb651d756f7_Itekako_150_Employees.gif',
+                                    text: '150+ employees'
+                                },
+                                {
+                                    image: 'https://cdn.prod.website-files.com/64f1d2353c80a2c0780949bc/650002473f676cb651d756f7_Itekako_150_Employees.gif',
+                                    text: '150+ employees'
+                                },
+                                {
+                                    image: 'https://cdn.prod.website-files.com/64f1d2353c80a2c0780949bc/650002473f676cb651d756f7_Itekako_150_Employees.gif',
+                                    text: '150+ employees'
+                                },
+                                {
+                                    image: 'https://cdn.prod.website-files.com/64f1d2353c80a2c0780949bc/650002473f676cb651d756f7_Itekako_150_Employees.gif',
+                                    text: '150+ employees'
+                                },
+                            ].map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className='flex items-center gap-5 mr-5'
+                                >
+                                    <img 
+                                        src={item.image}
+                                        alt="project image" 
+                                        className='w-[6.25rem] h-[6.25rem]'
+                                    />
+                                    <p className='text-white text-[2.19rem] leading-[1.1] font-[200]'>{item.text}</p>
+                                </div>
+                            ))
+                        }
+                    </Slider>
+                </div>
+            </div>
+        </main>
+    )
+}
+
+export default App

@@ -1,0 +1,288 @@
+@reference "tailwindcss";
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('./assets/fonts/Switzer_Complete/OTF/Switzer-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('./assets/fonts/Switzer_Complete/OTF/Switzer-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('./assets/fonts/Switzer_Complete/OTF/Switzer-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RecklessNeue';
+  src: url('./assets/fonts/reckless_neue/RecklessNeue-Regular.woff2') format('woff2'),
+        url('./assets/fonts/reckless_neue/RecklessNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RecklessNeue';
+  src: url('./assets/fonts/reckless_neue/RecklessNeue-Light.woff2') format('woff2'),
+        url('./assets/fonts/reckless_neue/RecklessNeue-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RecklessNeue';
+  src: url('./assets/fonts/reckless_neue/RecklessNeue-Thin.woff2') format('woff2'),
+        url('./assets/fonts/reckless_neue/RecklessNeue-Thin.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@theme {
+  --font-switzer: "Switzer", sans-serif; 
+}
+
+@theme {
+  --font-reckless-neue: "RecklessNeue", sans-serif; 
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'RecklessNeue', sans-serif;
+}
+
+p, button, li{
+  font-family: 'Switzer', sans-serif;
+}
+
+body {
+  background-color: #020202;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.label {
+  @apply text-xs uppercase tracking-[0.3em] text-[#9ad6cb];
+}
+
+.heading-xl {
+  @apply text-[2.4rem] leading-[1.1] md:text-5xl font-[200];
+}
+
+.heading-lg {
+  @apply text-[2rem] leading-[1.15] md:text-[4.2rem] font-[200];
+}
+
+.dark-section {
+  @apply bg-[#020202] px-4 py-14 sm:px-8 md:py-16;
+}
+
+.light-section {
+  @apply bg-[#deecec] py-14 md:py-16;
+}
+
+.section-shell {
+  @apply mx-auto max-w-screen-2xl px-2 sm:px-4;
+}
+
+.btn-primary {
+  @apply inline-flex items-center rounded-full bg-[#f3ff65] px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-black transition duration-200 hover:translate-y-[-2px];
+}
+
+.spotify-btn {
+  @apply fixed bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#00f4ba] text-black shadow-lg transition duration-200 hover:scale-105;
+}
+
+.spotify-btn .spotify-label {
+  @apply absolute left-[-120%] rounded-full bg-[#f3ff65] px-3 py-1 text-xs font-semibold text-black opacity-0 transition duration-200;
+}
+
+.spotify-btn:hover .spotify-label {
+  opacity: 1;
+}
+
+.story-card {
+  @apply rounded-3xl bg-white/5 p-4 backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:bg-white/8;
+}
+
+.slider-arrow {
+  @apply absolute top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-[#0f1313]/80 text-white transition duration-200 hover:border-[#f3ff65] hover:text-[#f3ff65];
+}
+
+.slick-prev {
+  left: 6px;
+}
+
+.slick-next {
+  right: 6px;
+}
+
+.slick-slider {
+  @apply pb-6;
+}
+
+.slick-list {
+  @apply overflow-visible;
+}
+
+.marquee {
+  @apply overflow-hidden;
+}
+
+.marquee-track {
+  @apply flex items-center gap-10 py-8;
+  animation: marquee 48s linear infinite;
+}
+
+.marquee-item {
+  @apply flex items-center gap-4 px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.25)];
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.service-tab {
+  @apply relative flex items-center px-4 py-5 text-left border-b border-white transition duration-200;
+}
+
+.service-tab.active {
+  @apply !border-b-0 bg-black/5;
+}
+
+.service-tab .timer-bar {
+  @apply absolute bottom-0 left-0 h-[2px] bg-gray-400/70 transition-[width] duration-[16ms] ease-linear;
+}
+
+.service-panel {
+  @apply bg-white p-6;
+}
+
+.service-item {
+  @apply flex items-center justify-between border-b border-black text-sm bg-white;
+}
+
+.industry-card {
+  @apply relative flex lg:flex-col items-end lg:items-start gap-5 border border-[#e5ece9] p-6;
+}
+
+.badge {
+  @apply w-10 h-10 flex items-center justify-center absolute right-4 top-4 rounded-full bg-[#f3ff65] px-3 py-1 text-xs font-semibold text-black;
+}
+
+.work-card {
+  @apply flex h-full flex-col justify-between rounded-2xl border border-[#e5ece9] bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.process-tab {
+  @apply relative flex items-center gap-3 px-4 py-5 text-left border-b border-white/10 transition duration-200;
+}
+
+.process-tab.active {
+  @apply !border-b-0 bg-white/5;
+}
+
+.process-tab .timer-bar {
+  @apply absolute bottom-0 left-0 h-[2px] bg-[#00f4ba] transition-[width] duration-[16ms] ease-linear;
+}
+
+.cta-image {
+  @apply overflow-hidden rounded-2xl bg-white/5;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #00f4ba;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.hero-fixed {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+
+.hero-spacer {
+  height: 100vh;
+}
+
+.content-over {
+  position: relative;
+  z-index: 1;
+  background: #020202;
+}
+
+.footer-link-item {
+  position: relative;
+}
+
+.footer-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.footer-link-text {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.footer-link-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #00f4ba;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link-item:hover .footer-link-text::after {
+  width: 100%;
+}
+
+.footer-link-arrow {
+  color: #00f4ba;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-link-item:hover .footer-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
